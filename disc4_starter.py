@@ -3,6 +3,20 @@ import random
 
 # create the class Dice
 class Dice:
+
+    def __init__(self, numSides=6):
+        self.numSides=numSides
+        self.rollTrack=[]
+    def __str__(self):
+        return "Last roll: " + str(self.rollTrack[len(self.rollTrack)-1])
+
+    def roll(self):
+        randomVal=random.randrange(1, self.numSides+1)
+        self.rollTrack.append(randomVal)
+        return randomVal
+
+
+
     # create the constructor (__init__) method
     # it takes as input the number sides and if none is specified use 6
     # it sets the dice object's number of sides (instance variable)
